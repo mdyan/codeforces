@@ -1,6 +1,15 @@
+import Data.List (sort)
+
 -- 158B
 taxi :: [Int] -> Int
-taxi ns = 
+taxi [n] = 1
+taxi (n:ns) 
+	| n + last ns > 4 = 1 + taxi ns
+	| 
+	| n == 4 = 1 + taxi ns
+	| n == 3 = if 
+	where ns
+	
 
 readIn :: IO [Int]
 readIn = do
@@ -8,9 +17,9 @@ readIn = do
     let n:is = lines contents
         x = read $ head $ words n  
         xs = take x $ map read is
-    return xs
+    return sort xs
 
 main :: IO()
 main = do
     i <- readIn
-    putStr (unlines $ taxi i)
+    putStr $ show $ taxi i
